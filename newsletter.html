@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script>
+        const skapi = new Skapi("ap22Jz4HGivkqJls9Sdw", "a4dd8739-ceac-4fec-b708-8019b3cf131a");
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Newsletter</h1>
+        <p>Insert your email to subscribe to our Newsletter.</p>
+        <form onsubmit="skapi.subscribeNewsletter(event).then(res => alert(res))">
+            <input type="email" name="email" placeholder='your@email.com'/>
+            <input hidden name="redirect" value="/successpage.html"/>
+            <input hidden name="group" value="public"/>
+            <input type="submit" value="Subscribe"/>
+        </form>
+    </div>
+</body>
+</html>
